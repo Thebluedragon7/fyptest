@@ -25,7 +25,7 @@ You need to first authenticate the user
 
 - import `jsonwebtoken` as JWT
 - sign the user with JWT
-  - `node; require('crypto).randomBytes(64).toSTring('hex')`
+  - `node; require('crypto').randomBytes(64).toString('hex')`
   - Create `ACCESS_TOKEN_SECRET` & `REFRESH_TOKEN_SECRET`
   - `jwt.sign(user, ACCESS_TOKEN_SECRET`
   - `res.json({accessToken})`
@@ -34,7 +34,7 @@ You need to first authenticate the user
 
 ```js
 function authenticate(req, res, next) {
-  const authHeader = req.header["authorization"];
+  const authHeader = req.headers["authorization"];
   const token = authHeader && authHeader.split(" ")[1];
   if (token == null) return res.sendStatus(401);
   jwt.verify(token, ACCESS_TOKEN_SECRET, (err, user) => {
