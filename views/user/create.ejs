@@ -1,0 +1,36 @@
+<div class="container">
+  <div class="d-flex justify-content-end">
+    <a
+      class="btn btn-primary align-self-end"
+      role="button"
+      href="/admin/dashboard/admin"
+      >View Admin Table</a
+    >
+  </div>
+  <form
+    action="/admin/dashboard/admin/create"
+    method="post"
+    enctype="application/x-www-form-urlencoded"
+  >
+    <label>Username</label
+    ><input
+      class="form-control"
+      type="text"
+      name="name"
+      required
+      autocomplete="off"
+      placeholder="username"
+      style="margin-bottom: 20px"
+    /><label>Admin Password</label
+    ><input
+      class="form-control"
+      type="password"
+      style="margin-bottom: 20px"
+      name="password"
+      placeholder="Strong Password"
+      required
+      autocomplete="off"
+    />
+    <button class="btn btn-primary" type="submit">Submit</button>
+  </form>
+</div>

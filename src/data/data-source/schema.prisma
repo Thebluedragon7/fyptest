@@ -8,17 +8,41 @@ datasource db {
 }
 
 model Human {
-  id       String @id @default(uuid())
-  name     String
-  age      Int
-  car      Car[]
-  email    String @unique
-  phone    String @unique
-  password String
+  id        String   @id @default(uuid())
+  name      String
+  age       Int
+  car       Car[]
+  email     String   @unique
+  phone     String   @unique
+  verified  Boolean  @default(false)
+  password  String
+  createdAt DateTime @default(now())
+  Token     Token?
 }
 
 model Car {
-  id      String  @id @default(uuid())
-  Human   Human?  @relation(fields: [humanId], references: [id])
-  humanId String?
+  id        String   @id @default(uuid())
+  name      String
+  model     String
+  image     String
+  Human     Human?   @relation(fields: [humanId], references: [id])
+  humanId   String?
+  createdAt DateTime @default(now())
+}
+
+model Token {
+  id           String   @id @default(uuid())
+  refreshToken String   @unique
+  createdAt    DateTime @default(now())
+  Human        Human    @relation(fields: [humanId], references: [id])
+  humanId      String   @unique
+}
+
+model Admin {
+  id        String   @id @default(uuid())
+  firstName String
+  lastName  String
+  username  String   @unique
+  password  String
+  createdAt DateTime @default(now())
 }

@@ -1,0 +1,79 @@
+<div class="container">
+  <div class="d-flex justify-content-end">
+    <a
+      class="btn btn-primary align-self-end"
+      role="button"
+      href="/admin/dashboard/human"
+      >View Human Table</a
+    >
+  </div>
+  <form
+    action="/admin/dashboard/human/create"
+    method="post"
+    enctype="application/x-www-form-urlencoded"
+  >
+    <label>Human Name</label
+    ><input
+      class="form-control"
+      type="text"
+      name="name"
+      required
+      autocomplete="off"
+      placeholder="Human Name"
+      style="margin-bottom: 20px"
+    /><label>Human Age</label
+    ><input
+      class="form-control"
+      type="number"
+      style="margin-bottom: 20px"
+      name="age"
+      min="18"
+      max="110"
+      placeholder="18"
+      required
+    /><label>Human Email</label
+    ><input
+      class="form-control"
+      type="email"
+      style="margin-bottom: 20px"
+      name="email"
+      required
+      placeholder="human@example.com"
+      autocomplete="off"
+    /><label>Human Phone</label
+    ><input
+      class="form-control"
+      type="tel"
+      style="margin-bottom: 20px"
+      required
+      name="phone"
+      placeholder="(977) 1234567890"
+      autocomplete="off"
+    /><label>Human Password</label
+    ><input
+      class="form-control"
+      type="password"
+      style="margin-bottom: 20px"
+      name="password"
+      placeholder="Strong Password"
+      required
+      autocomplete="off"
+    /><label>Cars</label
+    ><select class="form-control" name="cars" style="margin-bottom: 20px">
+      <option value="12" selected>This is item 1</option>
+      <option value="13">This is item 2</option>
+      <option value="14">This is item 3</option>
+    </select>
+    <div class="form-check" style="margin-bottom: 20px">
+      <input
+        id="formCheck-1"
+        class="form-check-input"
+        type="checkbox"
+        name="verified"
+        value="1"
+        checked
+      /><label class="form-check-label" for="formCheck-1">Verified</label>
+    </div>
+    <button class="btn btn-primary" type="submit">Submit</button>
+  </form>
+</div>

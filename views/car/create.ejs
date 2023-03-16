@@ -1,0 +1,41 @@
+<div class="container">
+  <div class="d-flex justify-content-end">
+    <a
+      class="btn btn-primary align-self-end"
+      role="button"
+      href="/admin/dashboard/car"
+      >View Car Table</a
+    >
+  </div>
+  <form
+    action="/admin/dashboard/car/create"
+    method="post"
+    enctype="application/x-www-form-urlencoded"
+  >
+    <label>Car Name</label
+    ><input
+      class="form-control"
+      type="text"
+      name="name"
+      required
+      autocomplete="off"
+      placeholder="Car name"
+      style="margin-bottom: 20px"
+    /><label>Car Model</label
+    ><input
+      class="form-control"
+      type="text"
+      style="margin-bottom: 20px"
+      name="model"
+      placeholder="Car model"
+      required
+    /><label>Human</label>
+    <select class="form-control" name="human" style="margin-bottom: 20px">
+      <option value="" selected></option>
+      <% humans.forEach(human => { %>
+      <option value="<%= human.id %>"><%= human.name %></option>
+      <% }); %>
+    </select>
+    <button class="btn btn-primary" type="submit">Submit</button>
+  </form>
+</div>

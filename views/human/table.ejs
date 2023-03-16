@@ -1,0 +1,68 @@
+<div class="container-fluid">
+  <div class="d-flex justify-content-end">
+    <a
+      class="btn btn-primary align-self-end"
+      role="button"
+      href="/admin/dashboard/human/create"
+      >Create Human</a
+    >
+  </div>
+  <div class="card shadow mb-4">
+    <div class="card-header py-3">
+      <h6 class="m-0 font-weight-bold text-primary">Human Table</h6>
+    </div>
+    <div class="card-body">
+      <div class="table-responsive">
+        <table
+          class="table table-bordered"
+          id="dataTable"
+          width="100%"
+          cellspacing="0"
+        >
+          <thead>
+            <tr>
+              <th>Id</th>
+              <th>Name</th>
+              <th>Age</th>
+              <th>Email</th>
+              <th>Phone Number</th>
+              <th>Password</th>
+              <th>Verified</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% humans.forEach(human => { %>
+            <tr>
+              <td><%= human.id %></td>
+              <td><%= human.name %></td>
+              <td><%= human.age %></td>
+              <td><%= human.email %></td>
+              <td><%= human.phone %></td>
+              <td><%= human.password %></td>
+              <td><%= human.verified %></td>
+            </tr>
+            <% })%>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- <script>
+  function deleteItem() {
+    const button = document.getElementById("delete-button");
+    button.addEventListener("click", () => {
+      const requestOptions = {
+        method: "DELETE",
+        headers: {
+          "Content-Type": "application/json",
+        },
+      };
+      fetch("/api/delete", requestOptions)
+        .then((response) => response.json())
+        .then((data) => console.log(data))
+        .catch((error) => console.error(error));
+    });
+  }
+</script> -->
